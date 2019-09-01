@@ -8,23 +8,27 @@ function App() {
         <nav className="navbar">
           <div>
             <ul className="navbar">
-              <li className="nav-item">Database</li>
-              <li className="nav-item">Guide</li>
-              <li className="nav-item">Calculator</li>
+              <div className="nav-item">Database</div>
+              <div className="nav-item">Guide</div>
+              <div className="nav-item">Calculator</div>
             </ul>
+          </div>
+          <div>
             <form className="navbar">
               <input placeholder="Search" />
               <button>
                 <i>*Search Icon*</i>
               </button>
             </form>
+          </div>
+          <div>
             <ul className="navbar">
-              <li className="nav-item">
+              <div className="nav-item">
                 <a href="/login/">Log in</a>
-              </li>
-              <li className="nav-item">
+              </div>
+              <div className="nav-item">
                 <a href="/sign-up/">Sign Up</a>
-              </li>
+              </div>
             </ul>
           </div>
         </nav>
