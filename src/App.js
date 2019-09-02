@@ -1,57 +1,142 @@
 import React from "react";
 import "./App.css";
+import Database from "./header/Database.js";
+import Guide from "./header/Guide.js";
+import Calculator from "./header/Calculator.js";
+import Add from "./main/Add.js";
+import styled from "styled-components";
+import SearchIcon from "@material-ui/icons/Search";
+import HomeIcon from "@material-ui/icons/Home";
+
+const Header = styled.header`
+  background-color: #282c34;
+  display: flex;
+  // max-height: 50px;
+  // min-height: 50px;
+  flex-direction: row;
+  color: #fff;
+`;
+
+const Button = styled.a`
+  background-color: #282c34;
+  color: #f5f5f5;
+  position: strecth;
+  justify: center;
+  align-self: center;
+  cursor: pointer;
+  // padding: 8px 8px 8px 8px;
+`;
+
+const SearchBox = styled.form`
+  min-height: 50px;
+  display: flex;
+  align-self: stretch;
+  // background-color: blue;
+  // justify-content: space-around;
+  padding: 8px 8px 8px 8px;
+`;
+
+const Main = styled.div`
+background-color: #fff
+color: #000
+`;
+
+const Footer = styled.footer`
+  background-color: #282c34;
+  color: #fff;
+  display: block;
+  text-align: center;
+  padding: 1rem;
+`;
+
+const FooterLink = styled.a`
+  color: #b3c4f4;
+`;
 
 function App() {
   return (
     <html lang="en">
-      <header className="bg-dark header">
-        <nav className="navbar">
-          <div>
-            <ul className="navbar">
-              <div className="nav-item">Database</div>
-              <div className="nav-item">Guide</div>
-              <div className="nav-item">Calculator</div>
-            </ul>
-          </div>
-          <div>
-            <form className="navbar">
-              <input placeholder="Search" />
-              <button>
-                <i>*Search Icon*</i>
-              </button>
-            </form>
-          </div>
-          <div>
-            <ul className="navbar">
-              <div className="nav-item">
-                <a href="/login/">Log in</a>
-              </div>
-              <div className="nav-item">
-                <a href="/sign-up/">Sign Up</a>
-              </div>
-            </ul>
-          </div>
-        </nav>
-      </header>
-
-      <main>
+      <Header>
+        <div
+          style={{
+            width: "40%",
+            justifyItems: "stretch",
+            display: "flex",
+            flexDirection: "row",
+            position: "relative"
+          }}
+        >
+          <ul>
+            <Button href="/home/">
+              <HomeIcon />
+            </Button>
+          </ul>
+          <ul>
+            <Database />{" "}
+          </ul>
+          <ul>
+            <Guide />
+          </ul>
+          <ul>
+            <Calculator />
+          </ul>
+        </div>
+        <div style={{ width: "20%", alignSelf: "stretch" }}>
+          {/* <Search /> */}
+          <SearchBox>
+            <input placeholder="Search Database" />
+            <button
+              style={{
+                backgroundColor: "LightBlue",
+                cursor: "pointer"
+              }}
+            >
+              <SearchIcon />
+            </button>
+          </SearchBox>
+        </div>
+        <div
+          style={{
+            width: "40%",
+            display: "flex",
+            flexDirection: "row-reverse"
+          }}
+        >
+          <ul>
+            <Button href="/sign-up/">Sign Up</Button>
+          </ul>
+          <ul>
+            <Button href="/login/">Log in</Button>
+          </ul>
+        </div>
+      </Header>
+      <Main
+        style={{
+          minHeight: "600px"
+        }}
+      >
         <div>
           <ul>
-            <i>Add New Item</i>
+            <Add>Add New Item</Add>
           </ul>
           <ul>
             <i>Calculate</i>
           </ul>
         </div>
-      </main>
-
-      <footer className="bg-dark">
+      </Main>
+      <Footer>
         <div>
-          <a href="/contact/">Contact</a> | <a href="/about-us/">About Us</a> |{" "}
-          <a href="privacy-policy/">Privacy Policy</a>
+          <div>
+            <FooterLink href="/contact/">Contact</FooterLink> |{" "}
+            <FooterLink href="/about-us/">About Us</FooterLink> |{" "}
+            <FooterLink href="privacy-policy/">Privacy Policy</FooterLink>
+          </div>
+          <ul />
+          <div>ZoraGuide - Ragnarok Mobile Fansite</div>
+          <ul />
+          <div>© 2019</div>
         </div>
-        <div> ZoraGuide - Ragnarok Mobile Fansite</div>
-      </footer>
+      </Footer>
     </html>
   );
 }
