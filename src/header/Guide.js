@@ -10,10 +10,13 @@ import styled from "styled-components";
 
 const Button = styled.div`
   background-color: #282c34;
-  color: #f5f5f5;
+  color: rgba(255, 255, 255, 0.5);
   position: relative;
   cursor: pointer;
   padding: 8px 8px 8px 8px;
+  :hover {
+    color: #f5f5f5;
+  }
 `;
 
 const useStyles = makeStyles(theme => ({
@@ -74,7 +77,9 @@ export default function MenuListComposition() {
                   <ClickAwayListener onClickAway={handleClose}>
                     <MenuList
                       style={{
-                        position: "absolute"
+                        position: "absolute",
+                        backgroundColor: "#282c34",
+                        color: "#fff"
                       }}
                     >
                       <MenuItem onClick={handleClose}>Swordsman</MenuItem>

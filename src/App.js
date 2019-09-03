@@ -15,16 +15,19 @@ const Header = styled.header`
   // min-height: 50px;
   flex-direction: row;
   color: #fff;
+  justify-items: stretch;
+  align-items: center;
 `;
 
 const Button = styled.a`
   background-color: #282c34;
-  color: #f5f5f5;
-  position: strecth;
-  justify: center;
-  align-self: center;
+  color: rgba(255, 255, 255, 0.5);
+  position: relative;
   cursor: pointer;
-  // padding: 8px 8px 8px 8px;
+  padding: 8px 8px 8px 8px;
+  :hover {
+    color: #f5f5f5;
+  }
 `;
 
 const SearchBox = styled.form`
@@ -51,6 +54,9 @@ const Footer = styled.footer`
 
 const FooterLink = styled.a`
   color: #b3c4f4;
+  :hover {
+    color: blue;
+  }
 `;
 
 function App() {
@@ -63,7 +69,8 @@ function App() {
             justifyItems: "stretch",
             display: "flex",
             flexDirection: "row",
-            position: "relative"
+            position: "relative",
+            alignItems: "center"
           }}
         >
           <ul>
