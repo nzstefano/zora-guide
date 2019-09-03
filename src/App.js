@@ -28,7 +28,6 @@ const Button = styled.a`
   cursor: pointer;
   padding: 8px 8px 8px 8px;
   width: 100%;
-  // flex: 1;
   :hover {
     color: #f5f5f5;
   }
@@ -37,11 +36,10 @@ const Button = styled.a`
 const SearchBox = styled.form`
   min-height: 50px;
   display: flex;
-  align-self: stretch;
-  // background-color: blue;
-  // justify-content: space-around;
   padding: 8px 8px 8px 8px;
   width: 100%;
+  align-items: left;
+  margin-left: 20px;
 `;
 
 const Content = styled.div`
@@ -51,12 +49,39 @@ height: 100vh;
 justify-content: space-around;
 `;
 
+const CancelBtn = styled.button`
+  background-color: blue;
+  justify-content: flex-end;
+  padding: 20px 20px 20px 20px;
+  margin: 20px 20px 20px 20px;
+  cursor: pointer;
+  :hover {
+     {
+      background-color: lightblue;
+    }
+  }
+`;
+
+const SaveBtn = styled.button`
+  background-color: orange;
+  justify-content: flex-end;
+  padding: 20px 20px 20px 20px;
+  margin: 20px 20px 20px 20px;
+  cursor: pointer;
+  :hover {
+     {
+      background-color: yellow;
+    }
+  }
+`;
+
 const Footer = styled.footer`
   background-color: #282c34;
   color: #fff;
   display: block;
   text-align: center;
   padding: 1rem;
+  width: 100%;
 `;
 
 const FooterLink = styled.a`
@@ -89,8 +114,6 @@ function App() {
           </Button>
           <Database /> <Guide />
           <Calculator />
-        </div>
-        <div>
           <SearchBox>
             <input placeholder="Search Database" />
             <button
@@ -114,9 +137,23 @@ function App() {
         </div>
       </Header>
       <Content>
-        <Add>Add New Item</Add>
-
-        <div>Calculate</div>
+        <div
+          style={{
+            minHeight: "80vh",
+            display: "flex"
+          }}
+        >
+          <Add />
+        </div>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "row-reverse"
+          }}
+        >
+          <SaveBtn>Save</SaveBtn>
+          <CancelBtn>Cancel</CancelBtn>
+        </div>
       </Content>
       <Footer>
         <div>
