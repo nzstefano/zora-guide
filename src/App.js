@@ -11,20 +11,24 @@ import HomeIcon from "@material-ui/icons/Home";
 const Header = styled.header`
   background-color: #282c34;
   display: flex;
-  // max-height: 50px;
-  // min-height: 50px;
   flex-direction: row;
   color: #fff;
   justify-items: stretch;
   align-items: center;
+  width: 100%;
+  justify-content: space-between;
 `;
 
 const Button = styled.a`
+  display: flex;
   background-color: #282c34;
   color: rgba(255, 255, 255, 0.5);
+  align-items: center;
   position: relative;
   cursor: pointer;
   padding: 8px 8px 8px 8px;
+  width: 100%;
+  // flex: 1;
   :hover {
     color: #f5f5f5;
   }
@@ -37,11 +41,14 @@ const SearchBox = styled.form`
   // background-color: blue;
   // justify-content: space-around;
   padding: 8px 8px 8px 8px;
+  width: 100%;
 `;
 
-const Main = styled.div`
+const Content = styled.div`
 background-color: #fff
 color: #000
+height: 100vh;
+justify-content: space-around;
 `;
 
 const Footer = styled.footer`
@@ -61,11 +68,10 @@ const FooterLink = styled.a`
 
 function App() {
   return (
-    <html lang="en">
+    <div>
       <Header>
         <div
           style={{
-            width: "40%",
             justifyItems: "stretch",
             display: "flex",
             flexDirection: "row",
@@ -73,23 +79,18 @@ function App() {
             alignItems: "center"
           }}
         >
-          <ul>
-            <Button href="/home/">
-              <HomeIcon />
-            </Button>
-          </ul>
-          <ul>
-            <Database />{" "}
-          </ul>
-          <ul>
-            <Guide />
-          </ul>
-          <ul>
-            <Calculator />
-          </ul>
+          <Button
+            href="/home/"
+            style={{
+              marginLeft: "10px"
+            }}
+          >
+            <HomeIcon />
+          </Button>
+          <Database /> <Guide />
+          <Calculator />
         </div>
-        <div style={{ width: "20%", alignSelf: "stretch" }}>
-          {/* <Search /> */}
+        <div>
           <SearchBox>
             <input placeholder="Search Database" />
             <button
@@ -104,33 +105,19 @@ function App() {
         </div>
         <div
           style={{
-            width: "40%",
             display: "flex",
             flexDirection: "row-reverse"
           }}
         >
-          <ul>
-            <Button href="/sign-up/">Sign Up</Button>
-          </ul>
-          <ul>
-            <Button href="/login/">Log in</Button>
-          </ul>
+          <Button href="/sign-up/">Sign Up</Button>
+          <Button href="/login/">Log in</Button>
         </div>
       </Header>
-      <Main
-        style={{
-          minHeight: "600px"
-        }}
-      >
-        <div>
-          <ul>
-            <Add>Add New Item</Add>
-          </ul>
-          <ul>
-            <i>Calculate</i>
-          </ul>
-        </div>
-      </Main>
+      <Content>
+        <Add>Add New Item</Add>
+
+        <div>Calculate</div>
+      </Content>
       <Footer>
         <div>
           <div>
@@ -138,13 +125,11 @@ function App() {
             <FooterLink href="/about-us/">About Us</FooterLink> |{" "}
             <FooterLink href="privacy-policy/">Privacy Policy</FooterLink>
           </div>
-          <ul />
           <div>ZoraGuide - Ragnarok Mobile Fansite</div>
-          <ul />
           <div>© 2019</div>
         </div>
       </Footer>
-    </html>
+    </div>
   );
 }
 
