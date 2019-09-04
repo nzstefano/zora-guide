@@ -4,6 +4,8 @@ import Database from "./header/Database.js";
 import Guide from "./header/Guide.js";
 import Calculator from "./header/Calculator.js";
 import Add from "./main/Add.js";
+import ResultMat from "./main/ResultMat.js";
+import ResultStat from "./main/ResultStat.js";
 import styled from "styled-components";
 import SearchIcon from "@material-ui/icons/Search";
 import HomeIcon from "@material-ui/icons/Home";
@@ -13,7 +15,7 @@ const Header = styled.header`
   display: flex;
   flex-direction: row;
   color: #fff;
-  justify-items: stretch;
+  justify-items: center;
   align-items: center;
   width: 100%;
   justify-content: space-between;
@@ -43,10 +45,19 @@ const SearchBox = styled.form`
 `;
 
 const Content = styled.div`
+display: flex;
+flex-direction: column;
 background-color: #fff
 color: #000
-height: 100vh;
+height: 100%;
 justify-content: space-around;
+`;
+
+const ResultBar = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  // position: fixed;
 `;
 
 const CancelBtn = styled.button`
@@ -78,10 +89,11 @@ const SaveBtn = styled.button`
 const Footer = styled.footer`
   background-color: #282c34;
   color: #fff;
-  display: block;
+  display: flex-block;
   text-align: center;
   padding: 1rem;
   width: 100%;
+  position: relative;
 `;
 
 const FooterLink = styled.a`
@@ -139,12 +151,16 @@ function App() {
       <Content>
         <div
           style={{
-            minHeight: "80vh",
+            height: "100%",
             display: "flex"
           }}
         >
           <Add />
         </div>
+        <ResultBar>
+          <ResultStat />
+          <ResultMat />
+        </ResultBar>
         <div
           style={{
             display: "flex",
