@@ -4,6 +4,8 @@ import Database from "./header/Database.js";
 import Guide from "./header/Guide.js";
 import Calculator from "./header/Calculator.js";
 import Add from "./main/Add.js";
+import AddCurx from "./main/AddWishx.js";
+import AddWishx from "./main/AddCurx.js";
 import ResultMat from "./main/ResultMat.js";
 import ResultStat from "./main/ResultStat.js";
 import styled from "styled-components";
@@ -51,6 +53,13 @@ background-color: #fff
 color: #000
 height: 100%;
 justify-content: space-around;
+`;
+
+const CalBox = styled.div`
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
 `;
 
 const ResultBar = styled.div`
@@ -149,14 +158,11 @@ function App() {
         </div>
       </Header>
       <Content>
-        <div
-          style={{
-            height: "100%",
-            display: "flex"
-          }}
-        >
-          <Add />
-        </div>
+        <CalBox>
+          {/* <Add /> */}
+          <AddWishx />
+          <AddCurx />
+        </CalBox>
         <ResultBar>
           <ResultStat />
           <ResultMat />
