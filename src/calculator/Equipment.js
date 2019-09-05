@@ -6,11 +6,11 @@ import ExpansionPanelDetails from "@material-ui/core/ExpansionPanelDetails";
 import ExpansionPanelSummary from "@material-ui/core/ExpansionPanelSummary";
 import ExpansionPanelActions from "@material-ui/core/ExpansionPanelActions";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
-import Chip from "@material-ui/core/Chip";
 import Button from "@material-ui/core/Button";
 import Divider from "@material-ui/core/Divider";
 import styled from "styled-components";
 import TierButton from "../calculator/TierButton.js";
+import Pic from "../calculator/Pic.js";
 
 const TierList = styled.form`
   display: flex;
@@ -72,7 +72,9 @@ export default function EquipmentPanel() {
           id="panel1c-header"
         >
           <div className={classes.column}>
-            <div>*pic*</div>
+            <div>
+              <Pic />
+            </div>
           </div>
           <div className={classes.column}>
             <div className={classes.secondaryHeading}>
