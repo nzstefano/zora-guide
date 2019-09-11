@@ -23,6 +23,8 @@ const AddCur = styled.button`
   padding: 30px 30px 30px 30px;
   margin: 10px 10px 10px 10px;
   cursor: pointer;
+  border-radius: 10px;
+  box-shadow: 0px 3px 8px #aaa, inset 0px 2px 3px #fff;
   :hover {
     background-color: red;
   }

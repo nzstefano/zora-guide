@@ -70,27 +70,65 @@ const ResultBar = styled.div`
 `;
 
 const CancelBtn = styled.button`
-  background-color: blue;
+  display: block;
+  position: relative;
+  text-align: center;
+  box-shadow: 0px 3px 8px #aaa, inset 0px 2px 3px #fff;
+  background-color: #0180fe;
   justify-content: flex-end;
   padding: 20px 20px 20px 20px;
   margin: 20px 20px 20px 20px;
   cursor: pointer;
+  border-radius: 8px;
+  :before {
+    content: "";
+    display: block;
+    background: #fff;
+    border-top: 2px solid #ddd;
+    position: absolute;
+    top: -18px;
+    left: -18px;
+    bottom: -18px;
+    right: -18px;
+    z-index: -1;
+    border-radius: 50%;
+    box-shadow: inset 0px 8px 48px #ddd;
+  }
   :hover {
      {
-      background-color: lightblue;
+      background-color: #01bbfe;
     }
   }
 `;
 
 const SaveBtn = styled.button`
-  background-color: orange;
+  display: block;
+  position: relative;
+  text-align: center;
+  box-shadow: 0px 3px 8px #aaa, inset 0px 2px 3px #fff;
+  background-color: #febb01;
   justify-content: flex-end;
   padding: 20px 20px 20px 20px;
   margin: 20px 20px 20px 20px;
   cursor: pointer;
+  border-radius: 8px;
+  :before {
+    content: "";
+    display: block;
+    background: #fff;
+    border-top: 2px solid #ddd;
+    position: absolute;
+    top: -18px;
+    left: -18px;
+    bottom: -18px;
+    right: -18px;
+    z-index: -1;
+    border-radius: 50%;
+    box-shadow: inset 0px 8px 48px #ddd;
+  }
   :hover {
      {
-      background-color: yellow;
+      background-color: #fedc01;
     }
   }
 `;
